@@ -2,7 +2,7 @@ import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar, IonFooter } from 
 import React from 'react';
 
 const Home: React.FC = () => {
-  return (
+    return (
         <IonPage>
             <IonHeader>
                 <IonToolbar>
@@ -30,7 +30,7 @@ const Home: React.FC = () => {
                 </p>
             </IonFooter>
         </IonPage>
-  );
+    );
 };
 
 export default Home;
