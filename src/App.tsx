@@ -11,7 +11,7 @@ import { home, list, logIn, notifications } from 'ionicons/icons';
 
 
 import HomePage from './pages/HomePage/HomePage';
-import LoginPage from './pages/LoginPage';
+import LoginPage from './pages/CredentialsPage/LoginPage';
 import TestPage from './pages/TestPage';
 
 /* Core CSS required for Ionic components to work properly */
@@ -40,7 +40,7 @@ const appPages: AppPage[] = [
         icon: home
     },
     {
-        title: 'Login',
+        title: 'Logout',
         url: '/login',
         icon: logIn
     },
@@ -59,27 +59,17 @@ const App: React.FC = () => (
                     <Menu appPages={ appPages } />
                     <IonPage id="main" >
                         <IonRouterOutlet>
-                            <Route path="/:tab(home)" component={ HomePage } exact={true} />
-                            <Route exact path="/" render={() => <Redirect to="/home" />} />
-                            <Route path="/:tab(login)" component={ LoginPage } />
+                            <Route path="/:tab(home)" component={ HomePage } />
+                            <Route path="/:tab(login)" component={ LoginPage }  exact={true} />
                             <Route path="/:tab(test)" component={ TestPage } />
+                            <Route path="/:tab(logout)" render={() => <Redirect to="/login" />}  />
+                            <Route exact path="/" render={() => <Redirect to="/login" />} />
                         </IonRouterOutlet>
                     </IonPage>
                 </IonSplitPane>
             </IonReactRouter>
         </IonApp>
     </>
-
-    // <IonApp>
-    //     <IonReactRouter>
-    //         <IonRouterOutlet>
-    //             <Route path="/login" component={LoginPage} exact={true} />
-    //             <Route path="/home" component={HomePage} />
-    //             <Route path="/test" component={TestPage} />
-    //             <Route exact path="/" render={() => <Redirect to="/login" />} />
-    //         </IonRouterOutlet>
-    //     </IonReactRouter>
-    // </IonApp>
 );
 
 export default App;

@@ -19,7 +19,6 @@ const TestPage: React.FC = () => {
                     <IonButton fill="clear">Start</IonButton>
                 </IonContent>
             </IonPage>
-
         </>
     );
 };

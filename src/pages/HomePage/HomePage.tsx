@@ -51,18 +51,18 @@ const HomePage: React.FC = () => {
         </IonHeader>
 
         <IonContent color="primary" >
-            <IonList color="primary">
+            <IonList color="secondary">
                 {
                     articles.map(a => {
                         
                         return (
                             <IonItem>
                                 { a['title'] }
-                                <IonButton href={ a['url'] } color="primary" slot="end">Read</IonButton>
+                                <IonButton href={ a['url'] } color="success" slot="end" >Read</IonButton>
                             </IonItem>
                         );
                     })
-                }    
+                }
             </IonList>
         </IonContent>
       </>
