@@ -1,42 +1,15 @@
 import { IonApp, IonPage, IonHeader, IonTitle, IonToolbar, IonFooter, IonContent, IonInput, IonList, IonItem, IonLabel, IonButton, IonCard,  IonCardContent, IonMenuButton, IonButtons } from '@ionic/react';
 import React, { useState } from 'react';
 
-interface Users {
-    name: string;
-    email: string;
-    position: string;
-    photo: string;
+const signUp = () => {
+    console.log('Sign Up works');
+}
+
+const signIn = () => {
+    console.log('Sign In works');
 }
 
 const LoginPage: React.FC = () => {
-
-    let [user, setUser] = useState<Users[]>([]);
-
-    let [ email, setEmail ] = useState('');
-    let [ password, setPassword ] = useState('');
-
-    let [ formErrors, setFormErrors ] = useState({});
-
-    // useIonViewWillEnter(async () => {
-    //     const result = await fetch('https://uifaces.co/api?limit=25', {
-    //         headers: { 'x-API-KEY': '873771d7760b846d51d025ac5804ab' }
-    //     });
-    //     const data = await result.json();
-    //     setUser(data);
-    // });
-    
-
-    // const submit = async () => {
-    //     try {
-    //       await login({
-    //         email,
-    //         password
-    //       });
-    //     } catch (e) {
-    //       setFormErrors(e);
-    //     }
-    // }
-
 
     return (
         <>
@@ -51,28 +24,30 @@ const LoginPage: React.FC = () => {
                 </IonHeader>
 
                 <IonContent>
-                    <form 
-                    // onSubmit={(e) => { e.preventDefault(); submit();}}
-                    >
-                        <div>
-                            {/* { formErrors ? (
-                                formErrors.message
-                            ): null} */}
-                        </div>
+                    <IonHeader class="ion-text-center ion-margin-top">
+                        <IonTitle>Insert your credentials</IonTitle>
+                    </IonHeader>
 
-                        <IonList>
-                            <IonItem>
-                                <IonLabel>Email</IonLabel>
-                                <IonInput name="email" type="email" value="email"  />
-                            </IonItem>
-                            <IonItem>
-                                <IonLabel>Password</IonLabel>
-                                <IonInput name="password" type="password" value="password" />
-                            </IonItem>
-                        </IonList>
+                    <IonItem>
+                        <IonLabel >Username</IonLabel>
+                        <IonInput value="username"></IonInput>
+                    </IonItem>
 
-                        <IonButton type="submit">Log in</IonButton>
-                    </form>
+                    <IonItem>
+                        <IonLabel >Password</IonLabel>
+                        <IonInput type="password" value="password"></IonInput>
+                    </IonItem>
+
+                    <IonFooter class="ion-text-center ion-margin-top">
+                        <IonButton ion-button margin-right onClick={signUp}>
+                            SIGN UP
+                        </IonButton>
+
+                        <IonButton ion-button color="secondary" onClick={signIn}>
+                            SIGN IN
+                        </IonButton>
+                    </IonFooter>
+
                 </IonContent>
             </IonPage>
         </>
