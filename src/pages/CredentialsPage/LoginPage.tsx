@@ -9,6 +9,14 @@ const signIn = () => {
     console.log('Sign In works');
 }
 
+const setUsername = () => {
+    console.log(`Username works` );
+}
+
+const setPassword = () => {
+    console.log(`Password In works` );
+}
+
 const LoginPage: React.FC = () => {
 
     return (
@@ -29,21 +37,21 @@ const LoginPage: React.FC = () => {
                     </IonHeader>
 
                     <IonItem>
-                        <IonLabel >Username</IonLabel>
-                        <IonInput value="username"></IonInput>
+                        <IonLabel>Username</IonLabel>
+                        <IonInput value="username" onChange={(e) => setUsername }></IonInput>
                     </IonItem>
 
                     <IonItem>
-                        <IonLabel >Password</IonLabel>
-                        <IonInput type="password" value="password"></IonInput>
+                        <IonLabel>Password</IonLabel>
+                        <IonInput type="password" value="password" onChange={(e) => setPassword}></IonInput>
                     </IonItem>
 
                     <IonFooter class="ion-text-center ion-margin-top">
-                        <IonButton ion-button margin-right onClick={signUp}>
+                        <IonButton class="ion-margin-right" onClick={signUp}>
                             SIGN UP
                         </IonButton>
 
-                        <IonButton ion-button color="secondary" onClick={signIn}>
+                        <IonButton color="secondary" onClick={signIn}>
                             SIGN IN
                         </IonButton>
                     </IonFooter>
