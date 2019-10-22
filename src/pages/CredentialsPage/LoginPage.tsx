@@ -9,15 +9,10 @@ const signIn = () => {
     console.log('Sign In works');
 }
 
-const setUsername = () => {
-    console.log(`Username works` );
-}
-
-const setPassword = () => {
-    console.log(`Password In works` );
-}
-
 const LoginPage: React.FC = () => {
+
+    const [username, setUsername] = useState('admin');
+    const [password, setPassword] = useState('admin');
 
     return (
         <>
@@ -32,31 +27,31 @@ const LoginPage: React.FC = () => {
                 </IonHeader>
 
                 <IonContent>
-                    <IonHeader class="ion-text-center ion-margin-top">
+                    <IonHeader class="ion-text-center ion-padding">
                         <IonTitle>Insert your credentials</IonTitle>
                     </IonHeader>
 
-                    <IonItem>
+                    <IonItem class="ion-text-center">
                         <IonLabel>Username</IonLabel>
-                        <IonInput value="username" onChange={(e) => setUsername }></IonInput>
+                        <IonInput type="email" value={username} placeholder="Enter Username" />
                     </IonItem>
 
-                    <IonItem>
+                    <IonItem class="ion-text-center">
                         <IonLabel>Password</IonLabel>
-                        <IonInput type="password" value="password" onChange={(e) => setPassword}></IonInput>
+                        <IonInput type="password" placeholder="Enter Password" value={password} ></IonInput>
                     </IonItem>
-
-                    <IonFooter class="ion-text-center ion-margin-top">
-                        <IonButton class="ion-margin-right" onClick={signUp}>
-                            SIGN UP
-                        </IonButton>
-
-                        <IonButton color="secondary" onClick={signIn}>
-                            SIGN IN
-                        </IonButton>
-                    </IonFooter>
-
                 </IonContent>
+
+                <IonFooter class="ion-text-center ion-padding">
+                    <IonButton class="ion-margin-right" onClick={signUp}>
+                        SIGN UP
+                    </IonButton>
+
+                    <IonButton color="secondary" onClick={signIn}>
+                        SIGN IN
+                    </IonButton>
+                        
+                </IonFooter>
             </IonPage>
         </>
     )

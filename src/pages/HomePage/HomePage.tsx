@@ -17,7 +17,7 @@ import './HomePage.css';
 
 // API key generate form https://newsapi.org/
 const API_KEY = "c88eb20970be4c8d8c232b8e20fdd982";
-const URL = `https://newsapi.org/v2/everything?q=bitcoin&from=2019-09-21&sortBy=publishedAt&apiKey=${API_KEY}`;
+const URL = `https://newsapi.org/v2/everything?q=bitcoin&from=2019-09-22&sortBy=publishedAt&apiKey=${API_KEY}`;
 
 const fetchArticles = () => {
 
