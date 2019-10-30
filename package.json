@@ -27,7 +27,7 @@
     "contributors": [
         {
             "name": "Amitesh Singh",
-            "github": "https://github.com/amitesh786/"
+            "github": "https://github.com/amitesh786/ionic-react-app/"
         }
     ],
     "scripts": {
@@ -56,5 +56,8 @@
     "engines": {
         "node": ">= 8.9.4",
         "npm": ">= 5.6.0"
+    },
+    "devDependencies": {
+        "axios": "^0.19.0"
     }
 }
